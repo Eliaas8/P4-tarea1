@@ -1,44 +1,55 @@
-Tabla: heroes
+**Tabla: heroes**
 
 -id (INTEGER, PRIMARY KEY AUTOINCREMENT)
+
 -nombre (TEXT, NOT NULL)
+
 -clase (TEXT, CHECK(...))
+
 -nivel_experiencia (INTEGER, CHECK(nivel_experiencia ≥ 1))
 
-Tabla: misiones
 
-id (INTEGER, PRIMARY KEY AUTOINCREMENT)
 
-nombre (TEXT, NOT NULL)
+**Tabla: misiones**
 
-nivel_dificultad (TEXT, CHECK(...))
+-id (INTEGER, PRIMARY KEY AUTOINCREMENT)
 
-localizacion (TEXT, NOT NULL)
+-nombre (TEXT, NOT NULL)
 
-recompensa (INTEGER, CHECK(recompensa ≥ 0))
+-nivel_dificultad (TEXT, CHECK(...))
 
-Tabla: monstruos
+-localizacion (TEXT, NOT NULL)
 
-id (INTEGER, PRIMARY KEY AUTOINCREMENT)
+-recompensa (INTEGER, CHECK(recompensa ≥ 0))
 
-nombre (TEXT, NOT NULL)
 
-tipo (TEXT, CHECK(...))
 
-nivel_amenaza (INTEGER, CHECK BETWEEN 1 AND 10)
+**Tabla: monstruos**
 
-Tabla: misiones_heroes
+-id (INTEGER, PRIMARY KEY AUTOINCREMENT)
 
-id (INTEGER, PRIMARY KEY AUTOINCREMENT)
+-nombre (TEXT, NOT NULL)
 
-id_mision (INTEGER, FOREIGN KEY → misiones.id)
+-tipo (TEXT, CHECK(...))
 
-id_heroe (INTEGER, FOREIGN KEY → heroes.id)
+-nivel_amenaza (INTEGER, CHECK BETWEEN 1 AND 10)
 
-Tabla: misiones_monstruos
 
-id (INTEGER, PRIMARY KEY AUTOINCREMENT)
 
-id_mision (INTEGER, FOREIGN KEY → misiones.id)
+**Tabla: misiones_heroes**
 
-id_monstruo (INTEGER, FOREIGN KEY → monstruos.id)
+-id (INTEGER, PRIMARY KEY AUTOINCREMENT)
+
+-id_mision (INTEGER, FOREIGN KEY → misiones.id)
+
+-id_heroe (INTEGER, FOREIGN KEY → heroes.id)
+
+
+
+**Tabla: misiones_monstruos**
+
+-id (INTEGER, PRIMARY KEY AUTOINCREMENT)
+
+-id_mision (INTEGER, FOREIGN KEY → misiones.id)
+
+-id_monstruo (INTEGER, FOREIGN KEY → monstruos.id)
