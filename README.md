@@ -1,6 +1,7 @@
 # P4-tarea1
 
 Tabla: heroes
+
 id (INTEGER, PRIMARY KEY AUTOINCREMENT)
 nombre (TEXT, NOT NULL)
 clase (TEXT, CHECK(...))
