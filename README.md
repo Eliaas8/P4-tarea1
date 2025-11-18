@@ -1,12 +1,9 @@
 Tabla: heroes
 
-id (INTEGER, PRIMARY KEY AUTOINCREMENT)
-
-nombre (TEXT, NOT NULL)
-
-clase (TEXT, CHECK(...))
-
-nivel_experiencia (INTEGER, CHECK(nivel_experiencia ≥ 1))
+-id (INTEGER, PRIMARY KEY AUTOINCREMENT)
+-nombre (TEXT, NOT NULL)
+-clase (TEXT, CHECK(...))
+-nivel_experiencia (INTEGER, CHECK(nivel_experiencia ≥ 1))
 
 Tabla: misiones
 
